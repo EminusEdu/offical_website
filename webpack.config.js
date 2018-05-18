@@ -4,7 +4,6 @@ const webpack = require('webpack');
 
 
 const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: `${__dirname}/public/index.html`,
   filename: 'index.html',
   inject: 'body',
 });
@@ -12,11 +11,10 @@ const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
 module.exports = {
   // 檔案起始點從 entry 進入，因為是陣列所以也可以是多個檔案
   entry: [
-    './src/index.js',
+    './frontend/index.js',
   ],
   // output 是放入產生出來的結果的相關參數
   output: {
-    path: `${__dirname}/public`,
     filename: 'bundle.js',
   },
   module: {
