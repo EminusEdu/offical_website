@@ -1,12 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Root from './components/root.js';
-import configureStore from './store/store.js';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createLogger } from 'redux-logger'
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import allReducers from './reducers/index';
 
-document.addEventListener("DOMContentLoaded", () => {
-  const store = configureStore();
-  const root = document.getElementById('root');
-  
-  
-  ReactDOM.render(<Root store={store}/>, root);
-});
+
+const mylogger = (store) => (next) => (action) => {
+  next(action);
+}
+const store = createStore(allReducers, {}, applyMiddleware(thunk, createLogger()));
+
+store.dispatch({type: "RECEIVE_TESTS", name: "Bob"})
+
+
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
+
+  render(){
+    return(
+      <div>
+        <h1>hello</h1>
+      </div>
+    )
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('app'));

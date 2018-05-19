@@ -4,6 +4,7 @@ const webpack = require('webpack');
 
 
 const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
+  template: `${__dirname}/public/index.html`,
   filename: 'index.html',
   inject: 'body',
 });
@@ -15,6 +16,7 @@ module.exports = {
   ],
   // output 是放入產生出來的結果的相關參數
   output: {
+    path: `${__dirname}/public`,
     filename: 'bundle.js',
   },
   module: {
