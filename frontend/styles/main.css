@@ -1,6 +1,6 @@
 html{
-  font-family: 'Helvetica','Arial',sans-serif;
-  background: #f8f8f8;
+  font-family: 'Lato',sans-serif;
+  font-weight: 400;
 }
 
 .landing_splash{
@@ -13,6 +13,12 @@ html{
   background-position: bottom;
 }
 
+.landing_splash > nav > div:last-child{
+  justify-content: flex-end;
+  display: flex;
+}
+
+
 .landing_text{
   height: 80vh;
   display: flex;
@@ -21,13 +27,20 @@ html{
 }
 
 .landing_text h1{
+  color: #FFF;
   font-size: 2em;
   margin-bottom: .25em;
+  text-shadow: 1px 1px 3px #555;
 }
 
 .landing_text span{
   display: block;
   margin-bottom: .5em;
+  text-shadow: 1px 1px 3px #555;
+}
+
+.landing_text button{
+  width: 25%;
 }
 
 nav{
@@ -37,12 +50,13 @@ nav{
 }
 
 nav a{
-  float:left;
+  text-align: left;
+  display: block;
   color: #FFF;
-  padding: 0 1em;
+  padding-left:1em;
 }
 
-nav a:last-child{
+.eminus_logo{
   padding: 0;
 }
 
@@ -52,19 +66,30 @@ nav a:last-child{
 
 .popular_languages h1{
   font-size: 2em;
-  margin-bottom: .25em;
+  margin: 2em 0;
+}
+
+.pop_langs{
+  margin: 2em auto;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(6, 1fr);
 }
 
 .pop_langs > div{
-  padding-left: 1em;
-}
-
-.pop_langs > div:first-child{
-  padding-left: 0em;
+  position: relative;
+  width: 100%;
 }
 
 .pop_langs img{
   border-radius: 6px;
+}
+
+.pop_langs span{
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  color: #FFF;
 }
 
 .tutors{
@@ -73,7 +98,78 @@ nav a:last-child{
 
 .tutors h1{
   font-size: 2em;
-  margin-bottom: .25em;
+  margin-left:0;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.tutors_list{
+  margin: 1em auto;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.tutors_list > div{
+  position: relative;
+  width: 100%;
+  padding: 0;
+}
+
+.card{
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+  border:0;
+}
+
+.user_card{
+  position: relative;
+}
+
+.price,
+.fav{
+  position: absolute;
+}
+
+.fav{
+  right: 0;
+  font-size: 1.25em;
+  color: #FFF;
+  padding: 0.25em;
+}
+
+.price{
+  left: 0;
+  color: #FFF;
+  top: 80%;
+  background: #CD3231;
+  padding: .25em .75em;
+}
+
+.user_profile{
+  font-weight: 300;
+  padding: .5em;
+}
+
+.user_profile p{
+  padding-bottom: .5em;
+  line-height: 1.25;
+}
+
+.rating{
+  color: #AFD473;
+  float:right;
+}
+
+.tutor_details{
+  padding: 1em 0;
+}
+
+.tutors_btn button{
+  width: 95%;
+}
+
+.tutors_btn > div:last-child button{
+  float: right;
 }
 
 .divider{
@@ -85,7 +181,7 @@ nav a:last-child{
 }
 
 .prefooter{
-  padding: 1em 0;
+  padding: 2em 0;
   border-top: 1px solid #999;
 }
 
@@ -117,6 +213,24 @@ a {
   letter-spacing: .5px;
 }
 
+a:hover{
+  color:#AFD473;
+}
+
+h1{
+  color: #555;
+}
+
+strong{
+  font-weight: 700;
+  display: inline-block;
+}
+
+i{
+  font-weight: 300;
+  display: block;
+}
+
 section{
   display: block;
   margin-top: 1em;
@@ -124,14 +238,34 @@ section{
 }
 
 button{
-  width: 25%;
+  cursor: pointer;
+  width: 100%;
   color: #FFF;
   background-color: #AFD473;
   font-size: 1em;
+  font-weight: 300;
   border-radius: 3px;
   padding:.5em;
   border:0;
   outline:none;
+  border: 1px solid #AFD473;
+}
+
+button:hover{
+  background-color: rgba(175,212,115,0.5);
+  border: 1px solid #AFD473;
+}
+
+.alt_btn{
+  color: #999;
+  background-color: #FFF;
+  border: 1px solid #999;
+}
+
+.alt_btn:hover{
+  color: rgb(175,212,115);
+  background-color: transparent;
+  border: 1px solid #AFD473;
 }
 
 input{
@@ -149,9 +283,10 @@ input{
 
 /* images */
 
-.eminus_logo{
-  width: 42px;
-  height: 52.1px;
+
+.eminus_logo img{
+  width: 150px;
+  height: auto;
   object-fit: contain;
   vertical-align: middle;
   margin-right: .5em;
