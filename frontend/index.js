@@ -1143,8 +1143,18 @@ class App extends React.Component {
             </div>
             <div className="col-sm-12 col-md-3">
               <ul>
-                <li><a href="#">Dropdown menus</a></li>
-                <li><a href="#">Dropdown menus</a></li>
+                <li>
+                  <select className="select">
+                    <option value="english">English</option>
+                    <option value="tr-ch">繁體中文</option>
+                  </select>
+                </li>
+                <li>
+                  <select className="select">
+                    <option value="USD">USD</option>
+                    <option value="NTD">NTD</option>
+                  </select>
+                </li>
               </ul>
             </div>
           </div>
