@@ -7,6 +7,14 @@ import thunk from 'redux-thunk';
 import allReducers from './reducers/index';
 
 
+import './styles/reset.css';
+import './styles/grid.css';
+import './styles/common.css';
+import './styles/main.css';
+
+var splash = require('./images/splash.jpg');
+var divider = require('./images/divider.jpg');
+
 const mylogger = (store) => (next) => (action) => {
   next(action);
 }
@@ -26,7 +34,141 @@ class App extends React.Component {
   render(){
     return(
       <div>
-        <h1>hello</h1>
+        <section className="landing_splash" style ={ { backgroundImage: "url("+splash+")" } } >
+          <nav className="row container_c">
+            <div className="col-sm-12 col-md-9">
+              <a href="#"><img
+                src={require('./images/eminus_logo.png')}
+              /></a>
+            </div>
+            <div className="col-sm-12 col-md-3">
+              <a href="#">Time Now</a>
+              <a href="#">Sign Up</a>
+              <a href="#">Sign In</a>
+            </div>
+          </nav>
+          
+          <div className="row container_c landing_text">
+            <div className="col-sm-12">
+              <h1>What Lanuage Would You Like to Perfect?</h1>
+              <span>Languages, experiences, services. All in one service.</span>
+              <form>
+                <input type="text" placeholder="Search..." />
+                <button>Start Learning</button>
+              </form>
+            </div>
+          </div>
+        </section>
+        
+        <section className="popular_languages">
+          <div className="row container_c">
+            <div className="col-sm-12">
+              <h1>Popular Languages</h1>
+            </div>
+          </div>
+          <div className="row container_c pop_langs">
+            <div className="col-sm-12 col-md-2">
+              <a href="#">
+              <img
+                src={require('./images/pop_lang.jpg')}
+              />
+              </a>
+            </div>
+          </div>
+        </section>
+        
+        <section className="tutors">
+          <div className="row container_c">
+            <div className="col-sm-12">
+              <h1>Recommended English Tutors of the Day</h1>
+            </div>
+          </div>
+        </section>
+        
+        <section className="divider" style ={ { backgroundImage: "url("+divider+")" } } >
+        </section>
+        
+        <section className="tutors">
+          <div className="row container_c">
+            <div className="col-sm-12">
+            </div>
+          </div>
+        </section>
+        
+        <section className="tutors">
+          <div className="row container_c">
+            <div className="col-sm-12">
+            </div>
+          </div>
+        </section>
+        
+        <section className="tutors">
+          <div className="row container_c">
+            <div className="col-sm-12">
+            </div>
+          </div>
+        </section>
+        
+        <section className="tutors">
+          <div className="row container_c">
+            <div className="col-sm-12 col-md-3">
+            </div>
+          </div>
+        </section>
+
+        <section className="prefooter">
+          <div className="row container_c">
+            <div className="col-sm-12 col-md-3">
+              <h1>Tutors</h1>
+                <ul>
+                  <li><a href="#">English Tutors</a></li>
+                  <li><a href="#">Japanes Tutors</a></li>
+                  <li><a href="#">Korean Tutors</a></li>
+                  <li><a href="#">French Tutors</a></li>
+                  <li><a href="#">Spanish Tutors</a></li>
+                </ul>
+            </div>
+            <div className="col-sm-12 col-md-3">
+              <h1>Eminus Languages</h1>
+                <ul>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Press</a></li>
+                  <li><a href="#">Career</a></li>
+                  <li><a href="#">Apply to Teach</a></li>
+                </ul>
+            </div>
+            <div className="col-sm-12 col-md-3">
+              <h1>Customer Support</h1>
+                <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">System Update</a></li>
+                </ul>
+            </div>
+            <div className="col-sm-12 col-md-3">
+              <ul>
+                <li><a href="#">Dropdown menus</a></li>
+                <li><a href="#">Dropdown menus</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        
+        <footer className="footer">
+          <div className="row container_c">
+            <div className="col-sm-10">
+              &copy; Eminus Languages
+            </div>
+            
+            <div className="col-sm-2">
+              <a href="#">Sitemap</a>.
+              <a href="#">Privacy and Terms</a>.
+              <a href="#">Facebook</a>
+              <a href="#">Insta</a>
+              <a href="#">Twitter</a>
+            </div>
+          </div>
+        </footer>
       </div>
     )
   }
